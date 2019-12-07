@@ -1,4 +1,4 @@
-const index=require("../index/index.js")
+const loaderInitialize = require("../../utils/loaderInitialize.js")
 const personalData = require("../../data/personalData.js")
 // pages/identity/identity.js
 Page({
@@ -7,14 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: 
-    {...index.indexData}
+    { ...loaderInitialize.indexData}
   ,
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    index.HandleLoad.call(this)
+    loaderInitialize.HandleLoad.call(this)
     this.setData({ personalInfo: ConvertPersonalData(personalData.personalInfo)})
   },
 
